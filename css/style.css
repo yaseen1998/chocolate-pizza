@@ -1,0 +1,92 @@
+body {
+    width: 1000px;
+    margin: auto;
+}
+header {
+    height: 90px;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 50px auto 150px ;
+    align-items: center;
+  }
+  #line{
+      height: 10px;
+      background-color: #000;
+      margin-top: 10px;
+  }
+  
+  @font-face {
+      font-family: 'Regular';
+      src: url(StyleScript-Regular.ttf);
+      font-style: normal;
+      font-weight: 100;
+      
+  }
+  #title{
+    font-size: 35px;
+    font-family: Regular;
+    font-style:italic ;
+  }
+  #header{
+      font-size:25px ;
+  }
+ 
+  .Ingredients{
+      display: grid;
+      grid-template-columns: auto auto;
+      background-image: url("list-bg.png");
+      height: 270px;  
+    }
+    .Ingredients p {
+        
+        padding-left: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .o-Ingredients__a-Ingredient {
+        margin: 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 16px;
+        padding: 15px 20px 10px 30px;
+    }
+    .o-Ingredients__a-Ingredient--CheckboxMock:after {
+        position: absolute;
+        display: none;
+        content: "";
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
+        transform: rotate(45deg);
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+    }
+    label{
+        margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+
+    button {
+        background-color: #351786;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor:pointer;
+      }
+      .comment{
+          background-color:#36a4e4;
+          height: 40px;
+          
+          font-size: large;
+          align-content: center;
+       
+      }
