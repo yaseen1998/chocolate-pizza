@@ -1,6 +1,7 @@
-let form = document.getElementById('cart') // id for form
-let div = document.getElementById('table') // id place for the table
-let table = document.createElement('table') // create element table
+let form = document.getElementById('cart2') // id for form
+let div = document.getElementById('cart-container') // id place for the table
+let table = document.createElement('table')
+table.id = 'cart' // create element table
 div.appendChild(table)
 //#######################################################################
 //#######################################################################
@@ -42,7 +43,7 @@ row_2.appendChild(td3)
 checkdata() // to check data in localstorage
 
 
-cart.addEventListener('submit',submitHandler);
+cart2.addEventListener('submit',submitHandler);
 
 function submitHandler  (event) {
     event.preventDefault(); // Stop refreshing
@@ -52,7 +53,8 @@ let quantityproduct = event.target.quantity.value // take a value from quantity 
 
 let newcart = new product(productname[0],quantityproduct,productname[1]) // make new costructor
 newcart.render() // print the new costructor
-console.log(product.all)
+cart2.reset();
+
 localStorage.cart3 = JSON.stringify(product.all) // store the data in all to localstorag
 }
 
@@ -63,7 +65,7 @@ function checkdata(){
     console.log(local)
     for(let i = 0;i<len;i++){
         
-        let newm = new product(local[i].location,local[i].quantitiy,img[i]) //print the old costructor
+        let newm = new product(local[i].location,local[i].quantitiy,local[i].image) //print the old costructor
         newm.render()
         }
 }
