@@ -40,6 +40,8 @@ let td3 = document.createElement('td')//  create fourth column contain 'quantity
 td3.textContent = this.quantitiy
 row_2.appendChild(td3)
 }
+//#######################################################################
+//#######################################################################
 checkdata() // to check data in localstorage
 
 
@@ -58,6 +60,8 @@ cart2.reset();
 localStorage.cart3 = JSON.stringify(product.all) // store the data in all to localstorag
 }
 
+//#######################################################################
+//#######################################################################
 
 function checkdata(){
     let local = JSON.parse(localStorage.getItem('cart3')) || [] // if the localstorage is exist store in local(any var)
@@ -68,4 +72,17 @@ function checkdata(){
         let newm = new product(local[i].location,local[i].quantitiy,local[i].image) //print the old costructor
         newm.render()
         }
+}
+//#######################################################################
+//#######################################################################
+table.addEventListener('click',removeitem)
+function removeitem(event){
+    event.preventDefault();
+    let target = event.target.innerText// select the text in td 
+    if(target == 'remove'){ 
+        let child = parseInt(event.target.parentElement.rowIndex) // take the index of row 
+        event.target.parentElement.remove() // remove the row
+product.all.splice(child,1) // remove the index from the constructor
+localStorage.cart3 = JSON.stringify(product.all) // return store the data in local storage after remove item
+    }
 }
